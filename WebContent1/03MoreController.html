@@ -1,0 +1,28 @@
+<html ng-app="myApp">
+  <head>
+	<title>Using Angular</title>
+	<script type="text/javascript" src="angular.js"></script>
+	<script>
+	</script>
+  </head>
+  <body>
+	<div ng-controller="FirstController">
+		Say Hello : {{hello}}<br>
+	</div>
+	<div ng-controller="SecondController">
+		say Hello-World : {{hello}}
+	</div>
+	
+  </body>
+  <script>
+	angular.module("myApp",[])
+	.controller("FirstController",function($scope)
+	{
+		$scope.hello = 'Hello';
+	})
+	.controller("SecondController",function($scope)
+	{
+		$scope.hello = 'Hello World';
+	});
+  </script>
+</html>

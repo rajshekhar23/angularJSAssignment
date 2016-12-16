@@ -1,0 +1,18 @@
+<html ng-app>
+  <head>
+	<title>Using Angular</title>
+	<script type="text/javascript" src=""></script>
+	<script>
+	</script>
+  </head>
+  <body>
+		Check Me: <input type="checkbox" ng-model="myVar" ng-init="myVar = true">
+		<h1 ng-if='myVar'>Welcome Checkbox Smile...!!!!!</h1>
+		<h1 ng-if='!myVar'>Go Checkbox Smile...!!!!!</h1>	
+		<h1 ng-show='myVar'>ng-show</h1>
+		<h1 ng-hide='myVar'>ng-hide</h1>		
+		<div ng-include="'OtherPage.html'"></div>
+  </body>
+  <script>
+  </script>
+</html>

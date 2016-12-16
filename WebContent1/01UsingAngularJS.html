@@ -1,0 +1,17 @@
+<html ng-app>
+  <head>
+	<title>Using Angular</title>
+	<script type="text/javascript" src="angular.js"></script>
+	<script>
+	</script>
+  </head>
+  <body>
+	<!-- Two Way Binding using ng-model directive--->
+    City : <input type="text" ng-model="city"></br>
+	<!-- One Way Binding using ng-bind directive--->
+	Your City is : <span ng-bind="city"></span></br>
+	city : {{city}}<br>
+	<!-- One Time Binding using Scope Operator --->
+	City : {{::city}}
+  </body>
+</html>

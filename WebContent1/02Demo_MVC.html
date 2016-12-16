@@ -1,0 +1,35 @@
+<html ng-app="myApp">
+  <head>
+	<title>Using Angular</title>
+	<script type="text/javascript" src="angular.js"></script>
+	<script>
+	</script>
+  </head>
+  <body>
+	<div ng-controller="MyController">
+		<!-- Two Way Binding using ng-model directive--->
+		City : <input type="text" ng-model="city"></br>
+		<!-- One Way Binding using ng-bind directive--->
+		Your City is : <span ng-bind="city"></span></br>
+		city : {{city}}<br>
+		<!-- One Time Binding using Scope Operator --->
+		City : {{::city}}
+		<p ng-repeat="person in people">
+			{{person.firstName}}<span>{{person.lastName}}</span>
+		</p>
+	</div>
+  </body>
+  <script>
+	angular.module("myApp",[])
+	.controller("MyController",function($scope)
+	{
+		$scope.city = 'Solapur';
+		$scope.people = 
+		[
+			{'firstName':'Rajshekhar','lastName':'Budharam'},
+			{'firstName':'Yasar','lastName':'Budharam'},
+			{'firstName':'Ambika','lastName':'Pallati'}			
+		];
+	});
+  </script>
+</html>

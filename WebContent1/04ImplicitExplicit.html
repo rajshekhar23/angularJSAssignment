@@ -1,0 +1,47 @@
+<html ng-app="myApp">
+  <head>
+	<title>Using Angular</title>
+	<script type="text/javascript" src="angular.js"></script>
+	<script>
+	</script>
+  </head>
+  <body>
+	<div ng-controller="FirstController">
+		{{customer.Id}}
+		{{customer.Name | uppercase}}
+		{{customer.Age}}
+		{{customer.Date}}
+	</div>
+	
+		<div ng-controller="SecondController">
+		{{customer.Id}}
+		{{customer.Name | uppercase}}
+		{{customer.Age}}
+		{{customer.Date}}
+	</div>
+  </body>
+  <script>
+	angular.module("myApp",[])
+	.controller("FirstController",function($scope)
+	{
+		<!-- Implicit Model customer object-->
+		$scope.customer = {
+			'Id':1001,
+			'Name':'Raj',
+			'Age':23,
+			'Date':new Date()
+		};
+	}).controller("SecondController",function($scope)
+	{
+		<!-- Explicit Model customer object-->
+		$scope.customer = new Customer(101,'rajshekhar',new Date(),2001);
+	});
+	function Customer(id,name,date,age){
+		this.Id = id;
+		this.Name = name;
+		this.Age = age;
+		this.Date = date;
+	}
+
+  </script>
+</html>
